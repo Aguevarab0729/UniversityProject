@@ -3,6 +3,7 @@ public class PartTimeTeacher extends Teacher {
     private int hoursWorked;
 
     public PartTimeTeacher(String name, double baseSalary, int hoursWorked) {
+
         super(name);
         this.baseSalary = baseSalary;
         this.hoursWorked = hoursWorked;

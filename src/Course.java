@@ -9,6 +9,7 @@ public class Course {
     private List<Student> students;
 
     public Course(String name, String course, Teacher teacher, List<Student> students) {
+
         this.name = name;
         this.course = course;
         this.teacher = teacher;

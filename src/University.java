@@ -16,8 +16,8 @@ public class University {
         teachers.add(new FullTimeTeacher("Profesor A", 2000, 3));
         teachers.add(new PartTimeTeacher("Profesor B", 15, 10));
 
-        students.add(new Student("001", "Juan", 20));
-        students.add(new Student("002", "Ana", 22));
+        students.add(new Student("0001", "Juan Jaimes", 20));
+        students.add(new Student("0002", "Ana Botero", 22));
 
         List<Student> classStudent = new ArrayList<>();
         classStudent.add(students.get(0));
@@ -32,13 +32,6 @@ public class University {
             System.out.println("Nombre : " + teacher.getName() + " salario: " + teacher.getSalary());
         }
     }
-
-    /*public void showCourses() {
-        System.out.println("Lista de cursos:");
-        for (Course course : courses) {
-            System.out.println("Nombre: " + course.getName() + " Profesor: " + course.getTeacher().getName());
-        }
-    }*/
 
     public void showCourses() {
         System.out.println("Lista de cursos:");

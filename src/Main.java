@@ -33,6 +33,7 @@ public class Main {
                 university.showCourses();
                 System.out.print("Selecciona el número del curso para ver detalles: ");
                 int idx = scan.nextInt();
+
                 if (idx > 0 && idx <= university.getCourses().size()) {
                     Course course = university.getCourses().get(idx - 1);
                     System.out.println("Curso: " + course.getName());
