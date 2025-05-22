@@ -1,10 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class University {
     private List<Teacher> teachers;
-    private List<Students> students;
+    private List<Student> students;
     private List<Course> courses;
 
     public University() {
@@ -14,33 +13,42 @@ public class University {
     }
 
     public void datainitialize() {
+        teachers.add(new FullTimeTeacher("Profesor A", 2000, 3));
+        teachers.add(new PartTimeTeacher("Profesor B", 15, 10));
 
-        teachers.add(new FullTimeTeacher("T001", "John Martinez", 35, "Mathematics", 3900000));
-        teachers.add(new PartTimeTeacher("T002", "Juliana Fajardo", 26, "Python", 3200000));
-
-        students.add(new Students("S001", "Andres Martinez", 20));
-        students.add(new Students("S002", "Yolanda Beltran", 22));
+        students.add(new Student("001", "Juan", 20));
+        students.add(new Student("002", "Ana", 22));
 
         List<Student> classStudent = new ArrayList<>();
         classStudent.add(students.get(0));
-        classes.add(new Class("C001", "Mathematics", teachers.get(0), classStudent));
+        courses.add(new Course("C001", "Mathematics", teachers.get(0), classStudent));
     }
 
+
     public void showTeachers() {
+        System.out.println("\n");
         System.out.println("Lista de profesores:");
         for (Teacher teacher : teachers) {
-            System.out.println("Nombre : " + teacher.getName() + "salario: " + teacher.getSalary());
+            System.out.println("Nombre : " + teacher.getName() + " salario: " + teacher.getSalary());
         }
     }
+
+    /*public void showCourses() {
+        System.out.println("Lista de cursos:");
+        for (Course course : courses) {
+            System.out.println("Nombre: " + course.getName() + " Profesor: " + course.getTeacher().getName());
+        }
+    }*/
 
     public void showCourses() {
         System.out.println("Lista de cursos:");
-        for (Course course : courses) {
-            System.out.println("Nombre: " + course.getName() + "Profesor: " + course.getTeacher().getName());
+        for (int i = 0; i < courses.size(); i++) {
+            Course course = courses.get(i);
+            System.out.println((i + 1) + ". " + course.getName() + " - Profesor: " + course.getTeacher().getName());
         }
     }
 
-    public void addStudent(String id, String name, int age) {
+    public void createStudent(String id, String name, int age) {
         students.add(new Student(id, name, age));
         System.out.println("Estudiante creado: " + name);
     }
@@ -48,8 +56,7 @@ public class University {
     public List<Course> getCourses() {
         return courses;
     }
-
-    public List<Students> getStudents() {
+    public List<Student> getStudents() {
         return students;
     }
 }
